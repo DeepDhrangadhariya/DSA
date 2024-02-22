@@ -12,21 +12,35 @@
 
 <script>
 
+// 4. Find maximum from array and find its time complexity.
+
 function findMax(arr) {
-    if (arr.length === 0) {
-        throw new Error("Array is empty");
-    }
+    if (arr.length === 0) {                     //---|
+        throw new Error("Array is empty");      //   |-- c1
+    }                                           //---|
 
     let max = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-    }
-    return max;
+    for (let i = 1; i < arr.length; i++) {      //---|
+        if (arr[i] > max) {     //---|               |
+            max = arr[i];       //   |--c2           |--n
+        }                       //---|               |
+    }                                           //---|
+    return max;     //--c3
 }
-const arr = [3, 7, 2, 9, 1];
-console.log("Maximum element:", findMax(arr));
+const arr = [3, 7, 2, 9, 1];    //--c4
+console.log("Maximum element:", findMax(arr));  //--c5
+
+/*
+    tn = c1 + c2 + n + c3 + c4 + c5
+       = c1 + c2(n) + c3 + c4 + c5
+       = c1 + c2(n) + 12c
+       = c1 + 12c + c2(n)
+       = 13c + c2(n)
+       = 15c(n) //Now Remove The Constant(c)
+    tn = n
+
+    Time Complexity = O(n)
+*/
 
 
 </script>

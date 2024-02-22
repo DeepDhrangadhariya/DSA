@@ -20,16 +20,30 @@
 // Make this pattern and calculate time complexity.
 
 function createPattern(rows) {
-    let pattern = "";
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < rows - i; j++) {
-            pattern += " *";
-        }
-        pattern += "\n";
-    }
-    return pattern;
+    let pattern = "";   //---c1
+    for (let i = 0; i < rows; i++) {          //-------------------|
+        for (let j = 0; j < rows - i; j++) {  //---|               |
+            pattern += " *";    //c2               |--n            |
+        }                                     //---|               |--n
+        pattern += "\n";    //c3                                   |
+    }                                         //-------------------|
+    return pattern; //---c4
 }
-const rows = 5;
-console.log(createPattern(rows));
+const rows = 5;  //---c5
+console.log(createPattern(rows));  //---c6
+
+
+/*
+    tn = c1 + n + c2 + n + c3 + c4 + c5 + c6
+       = c1(n) + c2(n) + c3 + c4 + c5 + c6
+       = c1(n) + c2(n) + 18c
+       = 18c + c1(n) + c2(n)
+       = 19c(n) + c2(n)
+       = 21c(n*n)
+       = 21c(n2) //Now Remove The Constant(c)
+    tn = n2
+
+    Time Complexity = O(n2)
+*/
 
 </script>

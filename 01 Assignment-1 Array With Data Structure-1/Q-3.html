@@ -11,14 +11,27 @@
 </html>
 <script>
 
+// 3. Sum all elements of arrays and find time complexity.
+
 function sumArray(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum;
+    let sum = 0;    //---c1
+    for (let i = 0; i < arr.length; i++) {  //---|
+    sum += arr[i];  //--c2                    //   |--n
+}                                           //---|
+    return sum; //--c3
 }
-const arr = [1, 2, 3, 4, 5];
-console.log("Sum of array elements:", sumArray(arr));
+const arr = [1, 2, 3, 4, 5];    //--c4
+console.log("Sum of array elements:", sumArray(arr));   //--c5
+
+/*
+    tn = c1 + n + c2 + c3 + c4 + c5
+       = c1(n) + c2 + c3 + c4 + c5
+       = c1(n) + 14c
+       = 14c + c1(n)
+       = 15c(n) //Now Remove The Constant(c)
+    tn = n
+
+    Time Complexity = O(n)
+*/
 
 </script>
