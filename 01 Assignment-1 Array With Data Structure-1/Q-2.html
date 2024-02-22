@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+// * * * * *   
+// * * * *
+// * * *
+// * *
+// *
+// Make this pattern and calculate time complexity.
+
+function createPattern(rows) {
+    let pattern = "";
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < rows - i; j++) {
+            pattern += " *";
+        }
+        pattern += "\n";
+    }
+    return pattern;
+}
+const rows = 5;
+console.log(createPattern(rows));
+
+</script>
