@@ -13,23 +13,39 @@
 <script>
 // 1. Find whether prime or not and calculate time complexity.
 function isPrime(n) {
-    if (n <= 1) {
-        return false;
-    }
-    if (n === 2) {
-        return true;
-    }
-    if (n % 2 === 0) {
-        return false;
-    }
-    for (let i = 3; i <= Math.sqrt(n); i += 2) {
-        if (n % i === 0) {
-            return false;
-        }
-    }
-    return true;
+    if (n <= 1) {         //---|
+        return false;     //   |-- c1
+}                         //---|
+
+    if (n === 2) {      //---|
+        return true;    //   |-- c2
+    }                   //---|
+
+    if (n % 2 === 0) {  //---|
+        return false;   //   |-- c3
+    }                   //---|
+
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {    //---|
+        if (n % i === 0) {  //---|                  //   |
+            return false;   //   |-- c4             //   |-- n
+        }                   //---|                  //   |
+}                                                   //---|
+    return true;            //---c5
 }
 
-const number = 29;
-console.log(`${number} is prime: ${isPrime(number)}`);
+const number = 29;          //---c6
+console.log(`${number} is prime: ${isPrime(number)}`);  //---c7
+
+
+/*
+    tn = c1 + c2 + c3 + c4 + n + c5 + c6 + c7
+       = c1 + c2 + c3 + c4(n) + c5 + c6 +c7
+       = 6c + c4(n) + 18c
+       = 6c + 18c + c4(n)
+       = 24c + c4(n)
+       = 28c(n) //Now Remove The Constant(c)
+    tn = n
+
+    Time Complexity = O(n)
+*/
 </script>
