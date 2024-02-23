@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort In Ascending Order</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+// Sort array is ascending order using selection sort.
+
+let array = [6,4,2,9,5,8]
+
+function selectionSortInAscendingOrder(arr)
+{
+    for(let i = 0; i < arr.length; i++)
+    {
+        let lastValue = arr.length - i - 1
+        let minValue = getMaxValue(arr,lastValue)
+        swapValue(arr,minValue,lastValue)
+    }
+}
+
+function getMaxValue(arr,lastValue)
+{
+    let minimum = 0
+    for(let i = 0; i <= lastValue; i++)
+    {
+        if(arr[i] > arr[minimum])
+        {
+            minimum = i
+        }
+    }
+    return minimum
+}
+
+function swapValue(arr,min,last)
+{
+    let ex = arr[min]
+    arr[min] = arr[last]
+    arr[last] = ex
+}
+
+console.log("Array: " + array)
+selectionSortInAscendingOrder(array)
+console.log("Sorted Array: " + array)
+
+</script>

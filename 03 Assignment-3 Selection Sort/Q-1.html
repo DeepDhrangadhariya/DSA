@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort In Descending Order</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+// Sort array is descending order using selection sort.
+
+let array = [6,4,2,9,5,8]
+
+function selectionSortInDescendingOrder(arr)
+{
+    for(let i = 0; i < arr.length; i++)
+    {
+        let endValue = arr.length - i - 1
+        let maximum = getMaxValue(arr,endValue)
+        swapValue(arr,maximum,endValue)
+    }
+}
+
+function getMaxValue(arr,lastValue)
+{
+    let maxValue = 0
+    for(let i = 0; i <= lastValue; i++)
+    {
+        if(arr[i] < arr[maxValue])
+        {
+            maxValue = i
+        }
+    }
+    return maxValue
+}
+
+function swapValue(arr,max,last)
+{
+    let extra = arr[max]
+    arr[max] = arr[last]
+    arr[last] = extra
+}
+
+console.log("Array: " + array)
+selectionSortInDescendingOrder(array)
+console.log("Sorted Array: " + array)
+</script>
