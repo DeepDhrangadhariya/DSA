@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort Ascending Order</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+// Q1. Sort in ascending order using bubble sort.
+
+let arr = [6,4,2,9,5,8]
+
+function bubbleSortInAscendingOrder(a){
+    for(let i = 0; i < a.length; i++)
+    {
+        for(let j = 0; j < a.length - 1; j++)
+        {
+            if(a[j] > a[j + 1])
+            {
+                let extra = a[j]
+                a[j] = a[j + 1]
+                a[j + 1] = extra
+            }
+        }
+    }
+    return a
+}
+
+console.log("Array : " + arr)
+console.log("Sorted Array : " + bubbleSortInAscendingOrder(arr))
+
+
+
+</script>
