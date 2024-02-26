@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second LinkedList</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // 2. Create second LinkedList add 6 nodes at least and traverse through it.
+
+    function singlySecond(number)
+    {
+        this.number = number
+        this.add = null
+    }
+
+    const valueOne = new singlySecond(5200)
+    const valueTwo = new singlySecond(5600)
+    const valueThree = new singlySecond(6000)
+    const valueFour = new singlySecond(6400)
+    const valueFive = new singlySecond(6800)
+    const valueSix = new singlySecond(7200)
+
+    valueOne.add = valueTwo
+    valueTwo.add = valueThree
+    valueThree.add = valueFour
+    valueFour.add = valueFive
+    valueFive.add = valueSix
+
+    let present = valueOne
+    while(present != null)
+    {
+        console.log(present.number)
+        present = present.add
+    }
+</script>

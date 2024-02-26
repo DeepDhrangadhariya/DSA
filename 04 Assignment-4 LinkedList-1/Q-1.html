@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First LinkedList</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // 1. Create first LinkedList add 6 nodes at least and traverse through it.
+
+    function singlyLinkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    const firstNode = new singlyLinkedList(3200)
+    const secondNode = new singlyLinkedList(3600)
+    const thirdNode = new singlyLinkedList(4000)
+    const forthNode = new singlyLinkedList(4400)
+    const fifthNode = new singlyLinkedList(4800)
+    const sixthNode = new singlyLinkedList(5200)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+    fifthNode.address = sixthNode
+
+    let fixed = firstNode
+    while(fixed != null)
+    {
+        console.log(fixed.num)
+        fixed = fixed.address
+    }
+</script>
