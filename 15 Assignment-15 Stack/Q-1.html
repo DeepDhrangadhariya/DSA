@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-1</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Stack
+    {
+        constructor()
+        {
+            this.arr = []
+        }
+        names(data)
+        {
+            this.arr.push(data)
+        }
+        size()
+        {
+            return this.arr.length
+        }
+        emptyCheck()
+        {
+            return this.arr.length === 0
+        }
+        pop()
+        {
+            if(this.emptyCheck())
+            {
+                return "Empty Stack"
+            }
+            else
+            {
+                return this.arr.pop()
+            }
+        }
+        peek()
+        {
+            if(this.emptyCheck())
+            {
+                return "Stack Is Empty"
+            }
+            else
+            {
+                return this.arr[this.size()-1]
+            }
+        }
+    }
+
+    let add = new Stack
+    add.names(1001)
+    add.names(2002)
+    add.names(3003)
+    add.names(4004)
+    add.names(5005)
+
+    console.log("Stack Before Pop Operation")
+    console.log(add)
+
+    add.pop()
+
+    console.log("")
+    console.log("Stack After Pop Operation")
+    console.log(add)
+    console.log("")
+
+    console.log("Size Of Stack: "+add.size())
+    console.log("Is Stack Empty: "+add.emptyCheck())
+    console.log("Stack's Last Added Value: "+add.peek())
+</script>
