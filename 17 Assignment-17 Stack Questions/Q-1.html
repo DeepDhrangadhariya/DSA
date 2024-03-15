@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brackets Balance</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function balancedOrNot(brackets)
+    {
+        let stored = []
+        for(let i = 0; i < brackets.length; i++)
+        {
+            let temp = brackets[i]
+
+            if(temp === "(" || temp === "{" || temp === "[")
+            {
+                stored.push(temp)
+            }
+            else
+            {
+                if(stored.length === 0)
+                {
+                    return 0
+                }
+                let last = stored.pop()
+                if(temp === ")" && last != "(" || temp === "}" && last != "{" || temp === "]" && last != "[")
+                {
+                    return false
+                }
+            }
+
+
+        }
+        return stored.length === 0
+    }
+
+    let example1 = "()"
+    console.log("Example-1: "+example1)
+    console.log("is Example-1 balanced: "+balancedOrNot(example1))
+    console.log("")
+
+    let example2 = "()[]{}"
+    console.log("Example-2: " +example2)
+    console.log("is Example-2 balanced: "+balancedOrNot(example2))
+    console.log("")
+
+    let example3 = "(]"
+    console.log("Example-3: "+example3)
+    console.log("Is Example-3 balanced: "+balancedOrNot(example3))
+</script>

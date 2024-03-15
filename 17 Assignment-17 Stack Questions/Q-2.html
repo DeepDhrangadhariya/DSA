@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed Stack</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let s = "Hello"
+
+    function reverseStack(s)
+    {
+        let stored = []
+        let string = ""
+        for(let i = 0; i < s.length; i++)
+        {
+            stored.push(s[i])
+        }
+        for(let i = 0; i < s.length; i++)
+        {
+            string += stored.pop()
+        }
+        return string
+    }
+
+    console.log("String: "+s)
+    console.log("")
+    console.log("Reversed String: "+reverseStack(s))
+    
+</script>
