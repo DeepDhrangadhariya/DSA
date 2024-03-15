@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Middle</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    let firstNode = new linkedList(1001)
+    let secondNode = new linkedList(2002)
+    let thirdNode = new linkedList(3003)
+    let forthNode = new linkedList(4004)
+    let fifthNode = new linkedList(5005)
+    let sixthNode = new linkedList(6006)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+    fifthNode.address = sixthNode
+
+    function middle(node)
+    {
+        let slow = node
+        let fast = node
+        while(fast != null)
+        {
+            slow = slow.address
+            fast = fast.address.address
+        }
+        return slow
+    }
+    let middleNode = middle(firstNode)
+
+    console.log("Length Is Even")
+    console.log(middleNode.num)
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Middle</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    let firstNode = new linkedList(1001)
+    let secondNode = new linkedList(2002)
+    let thirdNode = new linkedList(3003)
+    let forthNode = new linkedList(4004)
+    let fifthNode = new linkedList(5005)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+
+    function middle(node)
+    {
+        let slow = node
+        let fast = node
+        while(fast.address != null)
+        {
+            slow = slow.address
+            fast = fast.address.address
+        }
+        return slow
+    }
+    let middleNode = middle(firstNode)
+
+    if(linkedList.length % 2 != 0)
+    {
+        console.log("Length Is Odd")
+        console.log(middleNode.num)
+    }
+    else
+    {
+        console.log("Length Is Even!!")
+    }
+</script>

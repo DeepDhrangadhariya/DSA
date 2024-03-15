@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Q1. Find if LinkedList is palindrome
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    let firstNode = new linkedList('M')
+    let secondNode = new linkedList('A')
+    let thirdNode = new linkedList('D')
+    let forthNode = new linkedList('A')
+    let fifthNode = new linkedList('M')
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+
+    function palindrome(node)
+    {
+        let present = node
+        let arr = []
+        
+
+        while(present != null)
+        {
+            arr.push(present.num)
+            present = present.address
+            
+        }
+        let display
+        if(arr.join('') == arr.reverse().join(''))
+        {
+            display = arr + " Is Palindrome"
+        }
+        else{
+            display = arr + " Is Not Palindrome"
+        }
+        return display
+    }
+    console.log(palindrome(firstNode))
+
+</script>
