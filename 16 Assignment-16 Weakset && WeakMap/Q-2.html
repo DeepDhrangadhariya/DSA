@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakMap</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let map = new WeakMap()
+
+    let weak1 = {"name" : "Deep"}
+    let weak2 = {"name" : "Brijesh"}
+    let weak3 = {"name" : "Prem"}
+
+    map.set(weak1,"Gajjar")
+    map.set(weak2,"Bhuva")
+    map.set(weak3,"Gedia")
+    
+    console.log("Before Delete")
+    console.log(map)
+    console.log("")
+
+    map.delete(weak3)
+
+    console.log("After Delete")
+    console.log(map)
+
+    console.log("")
+    console.log("Is Weak3 Available? : "+map.has(weak3))
+    console.log("Is Weak2 Available? : "+map.has(weak2))
+</script>

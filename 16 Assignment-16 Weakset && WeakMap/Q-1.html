@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakSet</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let weak = new WeakSet()
+
+    let set1 = {"name" : "Deep"}
+    let set2 = {"name" : "brijesh"}
+    let set3 = {"name" : "Ayan"}
+
+    weak.add(set1)
+    weak.add(set2)
+    weak.add(set3)
+
+    console.log("WeakSet Before Delete Operation")
+    console.log(weak)
+
+    weak.delete(set3)
+
+    console.log("")
+    console.log("WeakSet After Delete Operation")
+    console.log(weak)
+
+    console.log("")
+
+    console.log("Is Set3 Available? : "+weak.has(set3))
+    console.log("Is Set2 Available? : "+weak.has(set2))
+</script>
