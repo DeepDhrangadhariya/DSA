@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Node</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    let firstNode = new linkedList(1001)
+    let secondNode = new linkedList(2002)
+    let thirdNode = new linkedList(3003)
+    let forthNode = new linkedList(4004)
+    let fifthNode = new linkedList(5005)
+    let sixthNode = new linkedList(6006)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+    fifthNode.address = sixthNode
+
+    let current = firstNode
+    console.log("Linked List Before Delete: ")
+
+    while(current != null)
+    {
+        console.log(current.num)
+        current = current.address
+    }
+    console.log("")
+
+    function Delete(node)
+    {
+        node.num = node.address.num
+        node.address = node.address.address
+    }
+    Delete(thirdNode)
+    current = firstNode
+
+    console.log("After Delete Node: ")
+    while(current != null)
+    {
+        console.log(current.num)
+        current = current.address
+    }
+</script>

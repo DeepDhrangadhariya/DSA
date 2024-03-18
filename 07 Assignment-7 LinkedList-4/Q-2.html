@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed Linked List</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    const firstNode = new linkedList(1001)
+    const secondNode = new linkedList(2002)
+    const thirdNode = new linkedList(3003)
+    const forthNode = new linkedList(4004)
+    const fifthNode = new linkedList(5005)
+    const sixthNode = new linkedList(6006)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+    fifthNode.address = sixthNode
+
+    let current = firstNode
+    console.log("Linked List Before Reversed:")
+    while(current != null)
+    {
+        console.log(current.num)
+        current = current.address
+    }
+
+    function reveredLinkedList(node)
+    {
+        let current = node
+        let last = null
+        while(current != null)
+        {
+            let newNumber = current.address
+            current.address = last
+            last = current
+            current = newNumber
+        }
+        return last
+    }
+    let reversed = reveredLinkedList(firstNode)
+    current = reversed
+
+    console.log("")
+    console.log("After Reversed: ")
+    while(current != null)
+    {
+        console.log(current.num)
+        current = current.address
+    }
+</script>
