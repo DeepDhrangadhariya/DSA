@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let nums = [1,2,3,4,3]
+    function stacksOperation(nums)
+    {
+        let stack = []
+        let max = []
+        for(let i = 0; i < nums.length; i++)
+        {
+            if(nums[i]>nums[i+1])
+            {
+                max.push(nums[i])
+            }
+            if(nums[i] == max)
+            {
+                stack.push(-1)
+            }
+            else
+            {
+                stack.push(nums[i]+1)
+            }
+        }
+        return stack
+    }
+    console.log(stacksOperation(nums))
+</script>
