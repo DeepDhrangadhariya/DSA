@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Queue
+    {
+        constructor()
+        {
+            this.elements = []
+        }
+        enQueue(e)
+        {
+            this.elements.push(e)
+        }
+        size()
+        {
+            return this.elements.length
+        }
+        isEmpty()
+        {
+            return this.elements.length === 0
+        }
+        deQueue()
+        {
+            if(this.isEmpty())
+            {
+                return "Empty Queue!!!"
+            }
+            else
+            {
+                return this.elements.shift()
+            }
+        }
+        front()
+        {
+            if(this.isEmpty())
+            {
+                return "Empty Queue!!!"
+            }
+            else
+            {
+                return this.elements[this.size() - this.size()]
+            }
+        }
+    }
+
+    let objQueue = new Queue
+
+    objQueue.enQueue(1001)
+    objQueue.enQueue(2002)
+    objQueue.enQueue(3003)
+    objQueue.enQueue(4004)
+    objQueue.enQueue(5005)
+    objQueue.enQueue(6006)
+
+
+    console.log("Queue: ")
+    console.log(objQueue)
+    console.log("")
+    console.log("Size Of Queue: "+objQueue.size())
+    console.log("")
+    console.log("Is Queue Empty Or Not? : "+objQueue.isEmpty())
+    console.log("")
+    console.log("Queue After DeQueue: ")
+    objQueue.deQueue()
+    console.log(objQueue)
+    console.log("")
+    console.log("Front Element Of Queue After DeQueue: "+objQueue.front())
+    console.log("")
+</script>
