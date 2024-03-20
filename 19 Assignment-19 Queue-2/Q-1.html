@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Increment</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Queue
+    {
+        constructor()
+        {
+            this.firstStack = []
+            this.secondStack = []
+        }
+        enQueue(x)
+        {
+            while(this.firstStack.length != 0)
+            {
+                this.secondStack.push(this.firstStack.pop())
+            }
+            this.firstStack.push(x)
+            while(this.secondStack.length != 0)
+            {
+                this.firstStack.push(this.secondStack.pop())
+            }
+        }
+        deQueue()
+        {
+            if(this.firstStack.length == 0)
+            {
+                return -1
+            }
+            let value = this.firstStack[this.firstStack.length - 1]
+            this.firstStack.pop()
+            return value
+        }
+    }
+
+    let objQueue = new Queue
+
+    objQueue.enQueue(1)
+    objQueue.enQueue(2)
+    objQueue.enQueue(3)
+    objQueue.enQueue(4)
+
+    console.log("Stack: ")
+    console.log(objQueue)
+    console.log("")
+    console.log("Queue: ")
+    console.log(objQueue.deQueue())
+    console.log(objQueue.deQueue())
+    console.log(objQueue.deQueue())
+    console.log(objQueue.deQueue())
+</script>
