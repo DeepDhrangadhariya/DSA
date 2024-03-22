@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function bracketsChecking(brackets)
+    {
+        let storage = []
+        for(let i = 0; i < brackets.length; i++)
+        {
+            let temp = brackets[i]
+            if(temp === "(" || temp === "{" || temp === "[")
+            {
+                storage.push(temp)
+            }
+            else
+            {
+                if(storage.length === 0)
+                {
+                    return 0
+                }
+                let end = storage.pop()
+                if(temp === ")" && end != "(" || temp === "}" && end != "{" || temp === "]" && end != "[")
+                {
+                    return false
+                }
+            }
+        }
+        return storage.length === 0
+    }
+
+    let first = "()"
+    console.log("Is First Example Is Correct Or Not: "+bracketsChecking(first)+"\n\n")
+    let second = "(){}[]"
+    console.log("Is Second Example Correct: "+bracketsChecking(second)+"\n\n")
+    let third = "(]"
+    console.log("Is Third Example Correct: "+bracketsChecking(third)+"\n\n")
+</script>
