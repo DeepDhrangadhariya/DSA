@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function recursionFibonacci(ex)
+    {
+        if(ex <= 1)
+        {
+            return 1
+        }
+        else
+        {
+            return recursionFibonacci(ex - 1) + recursionFibonacci(ex - 2)
+        }
+    }
+
+    let example = 5
+    console.log("Example: " + example)
+    console.log("Fibonacci Of Example: " + recursionFibonacci(example))
+</script>

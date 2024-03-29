@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function recursionFactorial(ex)
+    {
+        if(ex <= 1)
+        {
+            return 1
+        }
+        else
+        {
+            return ex * recursionFactorial(ex-1)
+        }
+    }
+
+    let example = 5
+    console.log("Example: " + example)
+    console.log("Factoral Of Example: " + recursionFactorial(example))
+</script>
