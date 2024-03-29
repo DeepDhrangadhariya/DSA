@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadane's Algorithm</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function kadanesAlgorithm(ex)
+    {
+        let firstMax = 0
+        let secondMax = 0
+        for(let i = 0; i < ex.length; i++)
+        {
+            firstMax = Math.max(0, firstMax + ex[i])
+            secondMax = Math.max(secondMax, firstMax)
+        }
+        return secondMax
+    }
+
+    let example1 = [-2,1,-3,4,-1,2,1,-5,4]
+    console.log("First Example: " + example1)
+    console.log("Sum Of First Example: " + kadanesAlgorithm(example1))
+    console.log("")
+
+    let example2 = [1]
+    console.log("Second Example: " + example2)
+    console.log("Sum Of Second Example: " + kadanesAlgorithm(example2))
+    console.log("")
+
+    let example3 = [5,4,-1,7,8]
+    console.log("Third Example: " + example3)
+    console.log("Sum Of Third Example: " + kadanesAlgorithm(example3))
+</script>
