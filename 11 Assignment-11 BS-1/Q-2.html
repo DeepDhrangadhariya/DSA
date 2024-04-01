@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let ex1 = [10, 30 , 60 , 89 , 99 , 105 , 120]
+    let target = 8
+
+    function Bs(ex,t,s,e)
+    {
+        if(s > e)
+        {
+            return -1
+        }
+        let mid = Math.round((s + e) / 2)
+        if(ex[mid] === t)
+        {
+            return mid
+        }
+        if(ex[mid] < t)
+        {
+            return Bs(ex,t,mid + 1,e)
+        }
+        else
+        {
+            return Bs(ex,t,s,mid - 1)
+        }
+    }
+    console.log("Example-1: " + ex1)
+    console.log("Target: " + target)
+    console.log("")
+    let index = Bs(ex1,target,0,ex1.length - 1)
+    if(index != -1)
+    {
+        console.log("Target Found Target At " + index)
+    }
+    else
+    {
+        console.log("Sorry Target Not Found !")
+    }
+
+</script>

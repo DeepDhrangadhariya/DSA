@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-1</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function linear(ex, t)
+    {
+        let check
+        for(let i = 0; i < ex.length; i++)
+        {
+            if(ex[i] === t)
+            {
+                check = i
+                break
+            }
+            else
+            {
+                check = -1
+            }
+        }
+        return check
+    }
+
+    let example1 = [-1,0,3,5,9,12]
+    let target = 9
+    console.log("Example-1: " + example1)
+    console.log("Target: " + target)
+    console.log("Matched Index Of Example: " + linear(example1,target))
+    console.log("")
+
+    target = 2
+    
+    console.log("Example-2: " + example1)
+    console.log("Target: " + target)
+    console.log("Matched Index Of Example: " + linear(example1,target))
+</script>
