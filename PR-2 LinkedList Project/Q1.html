@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merging Linked List</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    const firstNode = new linkedList(1)
+    const secondNode = new linkedList(3)
+    const thirdNode = new linkedList(5)
+    const forthNode = new linkedList(2)
+    const fifthNode = new linkedList(4)
+    const sixthNode = new linkedList(6)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+    fifthNode.address = sixthNode
+
+    let list1 = firstNode
+    let arr = []
+    while(list1 != null)
+    {
+        arr.push(list1.num)
+        list1 = list1.address
+    }
+    console.log(arr)
+
+    function bubbleSort(a)
+    {
+        for(let i = 0; i < a.length; i++)
+        {
+            for(let j = 0; j < a.length - 1;j++)
+            {
+                if(a[j] > a[j + 1])
+                {
+                    let extra = a[j]
+                    a[j] = a[j + 1]
+                    a[j + 1] = extra
+                }
+            }
+        }
+        return a
+    }
+
+    console.log("Sorted Array: " + bubbleSort(arr))
+
+
+</script>

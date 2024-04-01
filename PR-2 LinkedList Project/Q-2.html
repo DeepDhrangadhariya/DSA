@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function linkedList(num)
+    {
+        this.num = num
+        this.address = null
+    }
+
+    const firstNode = new linkedList(1)
+    const secondNode = new linkedList(2)
+    const thirdNode = new linkedList(3)
+    const forthNode = new linkedList(4)
+    const fifthNode = new linkedList(5)
+
+    firstNode.address = secondNode
+    secondNode.address = thirdNode
+    thirdNode.address = forthNode
+    forthNode.address = fifthNode
+
+    function removeNode(Node,n,length)
+    {
+        let num = Node
+        let count = n
+        let size = length
+        while(num != null)
+        {
+            if(size === count)
+            {
+                num = num.address
+            }
+            else
+            {
+                console.log(num.address)
+                num = num.address
+            }
+            size--
+        }
+    }
+    let Node = firstNode
+    let n = 2
+    let length = 5
+    removeNode(Node,n,length)
+</script>
