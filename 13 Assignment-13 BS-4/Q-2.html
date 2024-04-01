@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let num = [4,5,6,7,0,1,2]
+    let target = 3
+
+    function Bs(num,target)
+    {
+        let start = 0
+        let end = num.length - 1
+        while(start <= end)
+        {
+            let mid = Math.floor((start+end)/2)
+            if(num[mid] === target)
+            {
+                return mid
+            }
+            if(num[start] <= num[mid])
+            {
+                if(num[start] <= target && target < num[mid])
+                {
+                    end = mid - 1
+                }
+                else
+                {
+                    start = mid + 1
+                }
+            }
+            else
+            {
+                end = mid - 1
+            }
+            
+        }
+        return -1
+    }
+    let index = Bs(num, target)
+    if(index != 1)
+    {
+        console.log("Target Found On: " + index)
+    }
+    else
+    {
+        console.log(index)
+    }
+</script>
