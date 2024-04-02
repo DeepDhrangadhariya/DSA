@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-1</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function firstTask(num,target)
+    {
+        let sum = 0
+        let ans = []
+        for(let i = 0; i < num.length; i++)
+        {
+            if(sum != target)
+            {
+                sum = sum + num[i]
+                ans.push(i)
+            }
+        }
+        return ans
+    }
+
+    function firstTask2(num,target)
+    {
+        let sum = 0
+        let ans = []
+        for(let i = 1; i < num.length; i++)
+        {
+            if(sum != target)
+            {
+                sum = sum + num[i]
+                ans.push(i)
+            }
+        }
+        return ans
+    }
+
+    let ex1 = [2,7,11,15]
+    let target = 9
+    console.log("Ans Of First Example: "+firstTask(ex1,target))
+    let ex2 = [3,2,4]
+    target = 6
+    console.log("Ans Of Second Example: " + firstTask2(ex2,target))
+    let ex3 = [3,3]
+    console.log("Ans Of Third Example: "+firstTask(ex3,target))
+</script>

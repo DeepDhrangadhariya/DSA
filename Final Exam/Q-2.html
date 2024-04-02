@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function isHappy(n) {
+    let check = new Set()
+    while (n !== 1 && !check.has(n)) {
+        check.add(n)
+        n = sum(n)
+    }
+    return n === 1
+}
+
+function sum(n) {
+    let sum = 0
+    while (n > 0) {
+        let digit = n % 10
+        sum += digit * digit
+        n = Math.floor(n / 10)
+    }
+    return sum
+}
+console.log("Num = 19: "+isHappy(19))
+console.log("Num = 2: "+isHappy(2))
+
+    
+</script>
