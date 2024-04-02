@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function isPalindrome(name)
+    {
+        let start = 0
+        let end = name.length-1
+        let check = true
+
+        while(start < end)
+        {
+            if(name[start] === name[end])
+            {
+                start++
+                end--
+                console.log("Its A Palindrome")
+                check = true
+            }
+            else
+            {
+                console.log("Not A Palindrome")
+                check = false
+                break
+            }
+        }
+        return check
+    }
+    let name = "racecar"
+    console.log("String: " + name)
+    console.log(isPalindrome(name))
+</script>

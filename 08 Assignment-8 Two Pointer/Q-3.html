@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-3</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function thirdTask(num,target)
+    {
+        let sum = 0
+        let ans = []
+        for(let i = 0; i < num.length; i++)
+        {
+            if(sum != target)
+            {
+                sum = sum + num[i]
+                ans.push(i)
+            }
+        }
+        return ans
+    }
+
+    function thirdTask2(num,target)
+    {
+        let sum = 0
+        let ans = []
+        for(let i = 1; i < num.length; i++)
+        {
+            if(sum != target)
+            {
+                sum = sum + num[i]
+                ans.push(i)
+            }
+        }
+        return ans
+    }
+
+    let ex1 = [2,7,11,15]
+    let target = 9
+    console.log("Example-1: " + ex1)
+    console.log("Target: " + target)
+    console.log("Ans Of First Example: "+thirdTask(ex1,target))
+    console.log("")
+    let ex2 = [3,2,4]
+    target = 6
+    console.log("Example-2: " + ex2)
+    console.log("Target: " + target)
+    console.log("Ans Of Second Example: " + thirdTask2(ex2,target))
+    console.log("")
+    let ex3 = [3,3]
+    console.log("Example-3: " + ex3)
+    console.log("Target: " + target)
+    console.log("Ans Of Third Example: "+thirdTask(ex3,target))
+</script>
