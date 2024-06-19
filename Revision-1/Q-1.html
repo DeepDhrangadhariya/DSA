@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicates In Sorted Array</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function removeDuplicates(example)
+    {
+        if(example.length === 0)
+        {
+            return []
+        }
+        let expectedExample = [example[0]]
+        for(let i = 1; i < example.length; i++)
+        {
+            if(example[i] != example[i - 1])
+            {
+                expectedExample.push(example[i])
+            }
+        }
+        return expectedExample
+    }
+
+    let num = [1,2,3,3,4,5]
+
+    console.log(removeDuplicates(num))
+
+    
+</script>

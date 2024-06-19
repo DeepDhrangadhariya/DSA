@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus One</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    let num = [4,3,2,0]
+
+    function plusOne(e)
+    {
+
+        const n = e.length
+
+        for(let i = n-1; i >= 0; i--)
+        {
+            if(e[i] < 9)
+            {
+                e[i]++
+                return e
+            }
+            else
+            {
+                e[i] = 0
+            }
+        }
+
+        e.unshift(1)
+        return e
+
+    }
+
+    console.log(plusOne(num))
+
+</script>

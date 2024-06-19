@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merged Sorted Array</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function mergedArray(a1,a2,m,n)
+    {
+        let a3 = []
+
+        for(let i = 0; i < m; i++)
+        {
+            a3.push(a1[i])
+            a3.push(a2[i])
+        }
+
+        a3 = a3.sort((a,b) => a - b)
+
+        return a3
+    }
+
+    let a1 = [1,2,3,0,0,0]
+    let a2 = [2,5,6]
+    let m = 3
+    let n = 3
+
+    console.log(mergedArray(a1,a2,m,n))
+
+</script>
