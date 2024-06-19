@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort In Descending</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function quickSort(arr)
+    {
+        if(arr.length <= 1)
+        {
+            return arr
+        }
+        
+        const pivot = arr[0]
+        const left = []
+        const right = []
+
+        for(let i = 1; i < arr.length; i++)
+        {
+            if(arr[i] > pivot)
+            {
+                right.push(arr[i])
+            }
+            else
+            {
+                left.push(arr[i])
+            }
+        }
+
+        return [...quickSort(right), pivot, ...quickSort(left)]
+    }
+
+    console.log(quickSort([3,5,6,1,2,8,9,14]))
+
+</script>
