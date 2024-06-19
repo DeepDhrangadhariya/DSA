@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    let num = [1,2,3,4,4,5,6]
+    let set = new Set(num)
+
+    let first_object = {'Name is : ' : 'Deep'}
+
+    set.add(7)
+    set.add(first_object)
+    set.delete(first_object)
+    set.clear()
+
+    console.log(set)
+    console.log(set.size)
+    console.log(set.has(2))
+
+    set.forEach(e=>{
+        console.log(e)
+    })
+
+</script>
